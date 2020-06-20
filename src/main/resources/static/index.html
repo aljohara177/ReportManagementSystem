@@ -1,0 +1,105 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Reports Management Application</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Paper Dashboard core CSS    -->
+    <link href="css/paper-dashboard.css" rel="stylesheet"/>
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="css/demo.css" rel="stylesheet" />
+
+    <!--  Fonts and icons     -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="css/themify-icons.css" rel="stylesheet">
+    <style>
+        html,body {
+            height: 100%;
+        }
+        body {
+            display:flex;
+            margin:0;
+            flex-direction:column;
+        }
+        .content-wrapper{
+            width: 35%;
+            padding: 80px 40px;
+            border-radius: 24px;
+            background-color: #fff;
+            box-shadow: 8px 13px 20px 7px rgba(#000000, 0.09);
+            margin: auto;
+            height: 50%;
+
+
+        }
+        button{
+            border:none;
+            background-color:transparent;
+            outline:none;
+        }
+        #error,#error1{
+            color: #000000;
+        }
+        .form-group {
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="content-wrapper" >
+    <div class="container-fluid">
+                    <div class="content">
+                        <form  method="post" th:action="@{/login}">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control border-input" name="username" placeholder="Enter username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" class="form-control border-input" name="password" placeholder="Enter Password" required>
+                                    </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info btn-fill btn-wd">Login</button>
+                            </div>
+                            <div class="text-center">
+                                <div th:if="${param.error}" id="error" class="alert alert-error">
+                                    Invalid username and password.
+                                </div>
+                                <div th:if="${param.logout}" id="error1" class="alert alert-success">
+                                    You have been logged out.
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+
+</html>
