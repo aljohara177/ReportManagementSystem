@@ -19,7 +19,7 @@ public class Attachment {
 
     private String fileType;
 
-    @Lob
+
     private byte[] data;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
